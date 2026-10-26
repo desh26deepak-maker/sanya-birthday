@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Sanya! 🎉✨</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,143 +12,202 @@
             box-sizing: border-box;
         }
         body {
-            background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
             background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            animation: gradientBG 12s ease infinite;
             font-family: 'Poppins', sans-serif;
             color: #fff;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             overflow-x: hidden;
-            text-align: center;
+            padding: 30px 15px;
+            position: relative;
         }
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .container {
-            width: 90%;
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            animation: fadeIn 1.5s ease-in-out;
+        .main-wrapper {
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
             position: relative;
             z-index: 2;
         }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border-radius: 25px;
+            padding: 35px 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+        }
         h1 {
             font-family: 'Sacramento', cursive;
-            font-size: 4rem;
+            font-size: 4.2rem;
+            color: #ff9a9e;
             margin-bottom: 5px;
-            color: #fff;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
         }
         h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            color: #fcefee;
         }
         p {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 25px;
-            color: #fcfcfc;
+            color: #e2e2e2;
+            margin-bottom: 20px;
         }
-        .cake-box {
+        .cake-container {
             font-size: 4.5rem;
             margin: 15px 0;
-            animation: bounce 2s infinite;
             cursor: pointer;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 5px 15px rgba(255,154,158,0.4));
         }
         .btn {
-            background: #fff;
-            color: #ff477e;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
             border: none;
-            padding: 14px 32px;
-            font-size: 1.1rem;
+            padding: 13px 30px;
+            font-size: 1.05rem;
             font-weight: 600;
             border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(255, 117, 140, 0.4);
             transition: all 0.3s ease;
         }
         .btn:hover {
-            background: #ff477e;
-            color: #fff;
-            transform: scale(1.08);
-            box-shadow: 0 8px 25px rgba(255, 71, 126, 0.4);
+            transform: scale(1.06);
+            box-shadow: 0 8px 25px rgba(255, 117, 140, 0.6);
         }
-        .hidden-message {
+        .hidden-box {
             display: none;
             margin-top: 20px;
-            font-size: 1.2rem;
-            background: rgba(0, 0, 0, 0.15);
-            padding: 15px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 15px;
-            animation: fadeIn 0.8s ease;
+            border: 1px solid rgba(255,255,255,0.15);
+            animation: fadeIn 0.6s ease;
+        }
+        .memory-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            text-align: left;
+        }
+        .memory-item {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 15px 20px;
+            border-radius: 15px;
+            border-left: 4px solid #ff758c;
+        }
+        .memory-item h4 {
+            color: #ff9a9e;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .memory-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #ddd;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-10px); }
         }
-        /* Floating Hearts Animation */
-        .heart {
+        /* Floating background particles */
+        .particle {
             position: absolute;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 20px;
-            animation: floatUp 5s linear infinite;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 18px;
+            animation: floatUp 6s linear infinite;
             z-index: 1;
         }
         @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            0% { transform: translateY(105vh) scale(0.5); opacity: 1; }
             100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Floating Background Hearts -->
-    <div class="heart" style="left: 10%; animation-duration: 4s;">❤️</div>
-    <div class="heart" style="left: 30%; animation-duration: 6s;">💖</div>
-    <div class="heart" style="left: 50%; animation-duration: 5s;">✨</div>
-    <div class="heart" style="left: 70%; animation-duration: 7s;">💕</div>
-    <div class="heart" style="left: 90%; animation-duration: 4.5s;">💗</div>
+    <!-- Floating Background Elements -->
+    <div class="particle" style="left: 10%; animation-duration: 5s;">✨</div>
+    <div class="particle" style="left: 25%; animation-duration: 7s;">💖</div>
+    <div class="particle" style="left: 45%; animation-duration: 4s;">⭐</div>
+    <div class="particle" style="left: 65%; animation-duration: 6s;">✨</div>
+    <div class="particle" style="left: 85%; animation-duration: 5.5s;">💫</div>
 
-    <div class="container">
-        <h1>Happy Birthday Sanya!</h1>
-        <div class="cake-box" onclick="blowCandles()">🎂✨</div>
-        <h2>To My Absolute Favorite Person!</h2>
-        <p>
-            May this special day bring you endless joy, boundless success, and all the happiness your heart can hold. You make this world a much brighter and more beautiful place just by being in it. Have an unforgettable celebration today! 🌟💖
-        </p>
-        <button class="btn" onclick="revealSurprise()">Click For Your Surprise 🎁</button>
-        <div id="surprise" class="hidden-message">
-            "Wishing you a year filled with grand adventures, sweet moments, and dreams coming true. Stay amazing, Sanya! 🎉🥂"
+    <div class="main-wrapper">
+        
+        <!-- Section 1: Hero Card -->
+        <div class="card">
+            <h1>Happy Birthday Sanya!</h1>
+            <div class="cake-container" onclick="triggerWish()">🎂✨</div>
+            <h2>To An Extraordinary Soul</h2>
+            <p>
+                May this year unfold remarkable chapters of success, absolute peace, and non-stop joy. You bring so much light and positivity into the world. Have an absolute blast today! 🌟
+            </p>
+            <button class="btn" onclick="toggleSection('surpriseBox')">Open Your Special Gift 🎁</button>
+            <div id="surpriseBox" class="hidden-box">
+                <p style="color: #ffdde1; font-weight: 500;">
+                    "Wishing you a year where all your ambitions turn into reality and every single day brings a fresh reason to smile. Stay incredible, Sanya! 🥂✨"
+                </p>
+            </div>
         </div>
+
+        <!-- Section 2: Memories & Qualities -->
+        <div class="card">
+            <h2>Things That Make You Special 🌸</h2>
+            <div class="memory-grid">
+                <div class="memory-item">
+                    <h4>✨ Radiant Energy</h4>
+                    <p>Your vibrant presence effortlessly brightens up everyone around you.</p>
+                </div>
+                <div class="memory-item">
+                    <h4>💡 Brilliant Mind</h4>
+                    <p>The dedication and passion you put into everything you do is truly admirable.</p>
+                </div>
+                <div class="memory-item">
+                    <h4>💖 Golden Heart</h4>
+                    <p>Your kindness and genuine nature make you one of a kind.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Heartfelt Note -->
+        <div class="card">
+            <h2>A Note For You 💌</h2>
+            <p>
+                Never stop chasing your biggest dreams with that fierce passion of yours. May your path be filled with wonderful surprises, supportive people, and endless triumphs. Cheers to another fabulous year ahead! 🥂🎂
+            </p>
+        </div>
+
     </div>
 
     <script>
-        function revealSurprise() {
-            var msg = document.getElementById('surprise');
-            if (msg.style.display === 'block') {
-                msg.style.display = 'none';
-            } else {
-                msg.style.display = 'block';
-            }
+        function toggleSection(id) {
+            var box = document.getElementById(id);
+            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
         }
-        function blowCandles() {
-            alert('Make a sweet wish, Sanya! May all your dreams come true! 🎂🎈');
+        function triggerWish() {
+            alert('Make a grand wish, Sanya! May all your heart’s desires come true today! 🎂🎉');
         }
     </script>
 
