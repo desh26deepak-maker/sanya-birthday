@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Sanya! 🎉</title>
+    <title>Happy Birthday Sanya! 🎉✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
     <style>
         * {
@@ -12,7 +12,9 @@
             box-sizing: border-box;
         }
         body {
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
             font-family: 'Poppins', sans-serif;
             color: #fff;
             min-height: 100vh;
@@ -22,55 +24,75 @@
             overflow-x: hidden;
             text-align: center;
         }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         .container {
             width: 90%;
-            max-width: 500px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            z-index: 2;
         }
         h1 {
             font-family: 'Sacramento', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 4rem;
+            margin-bottom: 5px;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 20px;
             font-weight: 600;
+            letter-spacing: 1px;
         }
         p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.15rem;
+            line-height: 1.8;
             margin-bottom: 25px;
-            color: #f8f8f8;
+            color: #fcfcfc;
         }
-        .cake {
-            font-size: 4rem;
-            margin: 20px 0;
+        .cake-box {
+            font-size: 4.5rem;
+            margin: 15px 0;
             animation: bounce 2s infinite;
+            cursor: pointer;
         }
         .btn {
             background: #fff;
             color: #ff477e;
             border: none;
-            padding: 12px 30px;
+            padding: 14px 32px;
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
         .btn:hover {
             background: #ff477e;
             color: #fff;
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(255, 71, 126, 0.4);
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            border-radius: 15px;
+            animation: fadeIn 0.8s ease;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -78,22 +100,57 @@
         }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-12px); }
+        }
+        /* Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            animation: floatUp 5s linear infinite;
+            z-index: 1;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Floating Background Hearts -->
+    <div class="heart" style="left: 10%; animation-duration: 4s;">❤️</div>
+    <div class="heart" style="left: 30%; animation-duration: 6s;">💖</div>
+    <div class="heart" style="left: 50%; animation-duration: 5s;">✨</div>
+    <div class="heart" style="left: 70%; animation-duration: 7s;">💕</div>
+    <div class="heart" style="left: 90%; animation-duration: 4.5s;">💗</div>
+
     <div class="container">
         <h1>Happy Birthday Sanya!</h1>
-        <div class="cake">🎂✨</div>
-        <h2>A Very Special Day!</h2>
+        <div class="cake-box" onclick="blowCandles()">🎂✨</div>
+        <h2>To My Absolute Favorite Person!</h2>
         <p>
-            Aaj ka din sabse alag aur khubsurat hai kyunki aaj tumhara birthday hai! 
-            Dua hai ki tumhari zindagi hamesha khushiyon, muskan aur dher saare pyaar se bhari rahe. Have an amazing day ahead! 🎉💖
+            May this special day bring you endless joy, boundless success, and all the happiness your heart can hold. You make this world a much brighter and more beautiful place just by being in it. Have an unforgettable celebration today! 🌟💖
         </p>
-        <button class="btn" onclick="alert('Tumhari har ek wish poori ho Sanya! Happy Birthday once again! 🥳🎈')">Click For a Surprise! 🎁</button>
+        <button class="btn" onclick="revealSurprise()">Click For Your Surprise 🎁</button>
+        <div id="surprise" class="hidden-message">
+            "Wishing you a year filled with grand adventures, sweet moments, and dreams coming true. Stay amazing, Sanya! 🎉🥂"
+        </div>
     </div>
+
+    <script>
+        function revealSurprise() {
+            var msg = document.getElementById('surprise');
+            if (msg.style.display === 'block') {
+                msg.style.display = 'none';
+            } else {
+                msg.style.display = 'block';
+            }
+        }
+        function blowCandles() {
+            alert('Make a sweet wish, Sanya! May all your dreams come true! 🎂🎈');
+        }
+    </script>
 
 </body>
 </html>
